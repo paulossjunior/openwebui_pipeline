@@ -60,13 +60,13 @@ class Pipeline:
         if body.get("title", False):
             print("Title Generation Request")
         
-        pprint ("#### MESSAGE ####")
-        pprint(messages)
-        pprint ("#### USER MESSAGE ####")
+        print ("#### MESSAGE ####")
+        print(messages)
+        print ("#### USER MESSAGE ####")
         
-        pprint(user_message)
+        print(user_message)
         
-        pprint ("#### BODY ####")
-        pprint(body)
+        print ("#### BODY ####")
+        print(body)
 
         return f"{__name__} response to: user_message:{user_message} - Paulo"
