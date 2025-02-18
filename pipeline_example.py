@@ -15,7 +15,7 @@ class Pipeline:
         # self.id = "pipeline_example"
 
         # The name of the pipeline.
-        self.name = "Pipeline Example"
+        self.name = "Pipeline Example - Modificado"
         pass
 
     async def on_startup(self):
@@ -64,4 +64,4 @@ class Pipeline:
         print(user_message)
         print(body)
 
-        return f"{__name__} response to: {user_message} - Paulo"
+        return f"{__name__} response to: messages {messages}- user_message:{user_message} body - {body}- Paulo"
