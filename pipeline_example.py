@@ -36,8 +36,8 @@ class Pipeline:
         # This function is called before the OpenAI API request is made. You can modify the form data before it is sent to the OpenAI API.
         #print(f"inlet:{__name__}")
 
-        print(body)
-        print(user)
+        #print(body)
+        #print(user)
 
         return body
 
@@ -45,8 +45,8 @@ class Pipeline:
         # This function is called after the OpenAI API response is completed. You can modify the messages after they are received from the OpenAI API.
         #print(f"outlet:{__name__}")
 
-        print(body)
-        print(user)
+        #print(body)
+        #print(user)
 
         return body
 
