@@ -64,4 +64,4 @@ class Pipeline:
         print(user_message)
         print(body)
 
-        return f"{__name__} response to: messages {messages}- user_message:{user_message} body - {body}- Paulo"
+        return f"{__name__} response to: user_message:{user_message} - Paulo"
