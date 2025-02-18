@@ -1,7 +1,7 @@
 from typing import List, Union, Generator, Iterator
 from schemas import OpenAIChatMessage
 from pydantic import BaseModel
-
+from pprint import pprint
 
 class Pipeline:
     class Valves(BaseModel):
@@ -59,9 +59,11 @@ class Pipeline:
         # If you'd like to check for title generation, you can add the following check
         if body.get("title", False):
             print("Title Generation Request")
-
-        print(messages)
-        print(user_message)
-        print(body)
+        print ("#### MESSAGE ####")
+        pprint(messages)
+        print ("#### USER MESSAGE ####")
+        pprint(user_message)
+        print ("#### BODY ####")
+        pprint(body)
 
         return f"{__name__} response to: user_message:{user_message} - Paulo"
