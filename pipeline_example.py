@@ -20,12 +20,12 @@ class Pipeline:
 
     async def on_startup(self):
         # This function is called when the server is started.
-        print(f"on_startup:{__name__}")
+        #print(f"on_startup:{__name__}")
         pass
 
     async def on_shutdown(self):
         # This function is called when the server is stopped.
-        print(f"on_shutdown:{__name__}")
+        #print(f"on_shutdown:{__name__}")
         pass
 
     async def on_valves_updated(self):
@@ -34,19 +34,19 @@ class Pipeline:
 
     async def inlet(self, body: dict, user: dict) -> dict:
         # This function is called before the OpenAI API request is made. You can modify the form data before it is sent to the OpenAI API.
-        print(f"inlet:{__name__}")
+        #print(f"inlet:{__name__}")
 
-        print(body)
-        print(user)
+        #print(body)
+        #print(user)
 
         return body
 
     async def outlet(self, body: dict, user: dict) -> dict:
         # This function is called after the OpenAI API response is completed. You can modify the messages after they are received from the OpenAI API.
-        print(f"outlet:{__name__}")
+        #print(f"outlet:{__name__}")
 
-        print(body)
-        print(user)
+        #print(body)
+        #print(user)
 
         return body
 
@@ -59,11 +59,14 @@ class Pipeline:
         # If you'd like to check for title generation, you can add the following check
         if body.get("title", False):
             print("Title Generation Request")
-        print ("#### MESSAGE ####")
+        
+        pprint ("#### MESSAGE ####")
         pprint(messages)
-        print ("#### USER MESSAGE ####")
+        pprint ("#### USER MESSAGE ####")
+        
         pprint(user_message)
-        print ("#### BODY ####")
+        
+        pprint ("#### BODY ####")
         pprint(body)
 
         return f"{__name__} response to: user_message:{user_message} - Paulo"
