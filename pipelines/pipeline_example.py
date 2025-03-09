@@ -12,11 +12,11 @@ class Pipeline:
         # Best practice is to not specify the id so that it can be automatically inferred from the filename, so that users can install multiple versions of the same pipeline.
         # The identifier must be unique across all pipelines.
         # The identifier must be an alphanumeric string that can include underscores or hyphens. It cannot contain spaces, special characters, slashes, or backslashes.
-        # self.id = "pipeline_example"
+        self.id = "pipeline_example"
 
         # The name of the pipeline.
-        self.name = "Pipeline Example - Modificado"
-        pass
+        self.name = "Pipeline Example"
+        
 
     async def on_startup(self):
         # This function is called when the server is started.
@@ -54,19 +54,5 @@ class Pipeline:
         self, user_message: str, model_id: str, messages: List[dict], body: dict
     ) -> Union[str, Generator, Iterator]:
         # This is where you can add your custom pipelines like RAG.
-        print(f"pipe:{__name__}")
-
-        # If you'd like to check for title generation, you can add the following check
-        if body.get("title", False):
-            print("Title Generation Request")
         
-        print ("#### MESSAGE ####")
-        print(messages)
-        print ("#### USER MESSAGE ####")
-        
-        print(user_message)
-        
-        print ("#### BODY ####")
-        print(body)
-
-        return f"{__name__} response to: user_message:{user_message} - Paulo"
+        return iter(["Resposta A", "Resposta B", "Resposta C"])
